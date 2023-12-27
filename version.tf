@@ -22,5 +22,5 @@ provider "grafana" {
    alias = "cloud"
 
    url   = "https://grafana-testing-b3ggdvfwaybrg6a9.wus.grafana.azure.com"
-   auth  = "data.local_file.grafana_token.content"
+  #  auth  = "data.local_file.grafana_token.content"
 }
