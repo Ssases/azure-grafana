@@ -13,6 +13,7 @@ resource "terraform_data" "grafana-sa" {
 }
 
 data "local_file" "grafana_token" {
+  depends_on = [ terraform_data.grafana-sa ]
   filename = "${path.module}/grafana_token.txt"
 }
 
