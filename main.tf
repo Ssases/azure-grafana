@@ -34,6 +34,12 @@ resource "azurerm_role_assignment" "contributor" {
   principal_id         = azurerm_dashboard_grafana.default.identity[0].principal_id
 }
 
+resource "azurerm_role_assignment" "grafana-admin_user" {
+  scope                = data.azurerm_subscription.primary.id
+  role_definition_name = "Grafana Admin"
+  principal_id         = "00c9aae8-89ad-4b02-b6b2-1f5a62167606"
+}
+
 # Output the grafana url for usability
 output "grafana_url" {
   value = azurerm_dashboard_grafana.default.endpoint
